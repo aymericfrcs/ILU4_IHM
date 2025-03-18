@@ -74,7 +74,7 @@ public class TP2Ex2Panel extends javax.swing.JPanel {
             for (ColorPoint p : pointList) {
                 g2d.setColor(p.getColor());
                 g2d.fillOval(p.getX(), p.getY(), p.getSize(), p.getSize());
-                System.out.println(p.toString());
+                //System.out.println(p.toString());
             }
         }
     
@@ -83,11 +83,11 @@ public class TP2Ex2Panel extends javax.swing.JPanel {
         int x = evt.getX();
         int y = evt.getY();
         
-        System.out.println(x + "," + y);
+        //System.out.println(x + "," + y);
         
         ColorPoint newPoint = new ColorPoint(selectedWidth, selectedColor, x, y);
         pointList.add(newPoint);
-        System.out.println("new point:" + newPoint.toString());
+        //System.out.println("new point:" + newPoint.toString());
         repaint();
     }//GEN-LAST:event_formMousePressed
 
@@ -96,11 +96,11 @@ public class TP2Ex2Panel extends javax.swing.JPanel {
         int x = evt.getX();
         int y = evt.getY();
         
-        System.out.println(x + "," + y);
+        //System.out.println(x + "," + y);
         
         ColorPoint newPoint = new ColorPoint(selectedWidth, selectedColor, x, y);
         pointList.add(newPoint);
-        System.out.println("new point:" + newPoint.toString());
+        //System.out.println("new point:" + newPoint.toString());
         repaint();
     }//GEN-LAST:event_formMouseDragged
     

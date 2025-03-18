@@ -4,17 +4,22 @@
  */
 package com.mycompany.mavenproject1;
 
+import java.awt.Color;
+
 /**
  *
  * @author frm4465a
  */
 public class TP2Ex2 extends javax.swing.JFrame {
+    
+    private boolean userLoggedIn = false;
 
     /**
      * Creates new form TP2Ex2
      */
     public TP2Ex2() {
         initComponents();
+        makeComponentsInvisible();
     }
 
     /**
@@ -35,8 +40,16 @@ public class TP2Ex2 extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         tP2Ex2Panel1 = new com.mycompany.mavenproject1.TP2Ex2Panel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
+        jToggleButton3 = new javax.swing.JToggleButton();
+        jToggleButton4 = new javax.swing.JToggleButton();
+        jToggleButton5 = new javax.swing.JToggleButton();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,13 +61,27 @@ public class TP2Ex2 extends javax.swing.JFrame {
 
         jLabel2.setText("Password:");
 
-        jTextField2.setText("jTextField2");
-
         jButton1.setText("Se connecter");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setBorder(javax.swing.BorderFactory.createTitledBorder("Chat"));
+        jTextArea1.setEnabled(false);
         jScrollPane1.setViewportView(jTextArea1);
+
+        jTextField3.setEnabled(false);
+
+        jLabel3.setText("Votre message:");
+        jLabel3.setEnabled(false);
+
+        jLabel4.setText("Connecté depuis 0 secondes");
+        jLabel4.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -76,8 +103,15 @@ public class TP2Ex2 extends javax.swing.JFrame {
                                     .addComponent(jTextField2)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton1)))
-                        .addContainerGap())))
+                                .addComponent(jButton1))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField3)))
+                        .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,14 +124,23 @@ public class TP2Ex2 extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(61, 61, 61)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addGap(27, 27, 27)
                 .addComponent(jButton1)
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        tP2Ex2Panel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Dessin Partagé"));
+        tP2Ex2Panel1.setEnabled(false);
 
         javax.swing.GroupLayout tP2Ex2Panel1Layout = new javax.swing.GroupLayout(tP2Ex2Panel1);
         tP2Ex2Panel1.setLayout(tP2Ex2Panel1Layout);
@@ -110,19 +153,79 @@ public class TP2Ex2 extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        jToggleButton1.setBackground(new java.awt.Color(0, 0, 255));
+        jToggleButton1.setEnabled(false);
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
+        jToggleButton2.setBackground(new java.awt.Color(255, 0, 0));
+        jToggleButton2.setEnabled(false);
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
+
+        jToggleButton3.setBackground(new java.awt.Color(0, 255, 0));
+        jToggleButton3.setEnabled(false);
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
+
+        jToggleButton4.setText("Trait fin");
+        jToggleButton4.setEnabled(false);
+        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton4ActionPerformed(evt);
+            }
+        });
+
+        jToggleButton5.setText("Trait épais");
+        jToggleButton5.setEnabled(false);
+        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tP2Ex2Panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tP2Ex2Panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jToggleButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jToggleButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jToggleButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jToggleButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jToggleButton5)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jToggleButton4)
+                        .addComponent(jToggleButton5)))
+                .addGap(18, 18, 18)
                 .addComponent(tP2Ex2Panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -160,6 +263,105 @@ public class TP2Ex2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    public void makeComponentsInvisible() {
+        jLabel3.setVisible(false);
+        jLabel4.setVisible(false);
+        jTextField3.setVisible(false);
+    }
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (userLoggedIn) {
+            userLoggedIn = false;
+            
+            makeComponentsInvisible();
+            jTextField1.setEnabled(true);
+            jTextField2.setEnabled(true);
+            
+            jLabel3.setEnabled(false);
+            jLabel4.setEnabled(false);
+            jTextField3.setEnabled(false);
+
+            jTextArea1.setEnabled(false);
+            
+            jToggleButton1.setEnabled(false);
+            jToggleButton2.setEnabled(false);
+            jToggleButton3.setEnabled(false);
+            jToggleButton4.setEnabled(false);
+            jToggleButton5.setEnabled(false);
+
+            tP2Ex2Panel1.setEnabled(false);
+            
+            jButton1.setText("Se connecter");
+        }
+        else {
+            if (!"".equals(jTextField1.getText()) && !"".equals(jTextField2.getText())) {
+            
+                userLoggedIn = true;
+                //logs désactivés
+                jTextField1.setEnabled(false);
+                jTextField2.setEnabled(false);
+
+
+                //système chat activé
+                jLabel3.setEnabled(true);
+                jLabel3.setVisible(true);
+                jLabel4.setEnabled(true);
+                jLabel4.setVisible(true);
+                jTextField3.setEnabled(true);
+                jTextField3.setVisible(true);
+
+                jTextArea1.setEnabled(true);
+
+
+                //système dessin activé
+                jToggleButton1.setEnabled(true);
+                jToggleButton2.setEnabled(true);
+                jToggleButton3.setEnabled(true);
+                jToggleButton4.setEnabled(true);
+                jToggleButton5.setEnabled(true);
+
+                tP2Ex2Panel1.setEnabled(true);
+
+                jButton1.setText("Se déconnecter");
+
+                //TODO TIMER
+                
+            }
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+        //TODO dé-toggle le jToggleButton5
+        
+        tP2Ex2Panel1.selectedWidth = tP2Ex2Panel1.WIDTH_FINE;
+    }//GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
+        //TODO dé-toggle le jToggleButton4
+        
+        tP2Ex2Panel1.selectedWidth = tP2Ex2Panel1.WIDTH_WIDE;
+    }//GEN-LAST:event_jToggleButton5ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO dé-toggle les autres boutons
+        
+        tP2Ex2Panel1.selectedColor = Color.blue;
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        // TODO dé-toggle les autres boutons
+        
+        tP2Ex2Panel1.selectedColor = Color.red;
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO dé-toggle les autres boutons
+        
+        tP2Ex2Panel1.selectedColor = Color.green;
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,6 +402,8 @@ public class TP2Ex2 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -208,6 +412,12 @@ public class TP2Ex2 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToggleButton jToggleButton5;
     private com.mycompany.mavenproject1.TP2Ex2Panel tP2Ex2Panel1;
     // End of variables declaration//GEN-END:variables
 }

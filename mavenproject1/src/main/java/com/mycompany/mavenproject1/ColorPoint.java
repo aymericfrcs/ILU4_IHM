@@ -19,6 +19,8 @@ public class ColorPoint {
     ColorPoint(int size, Color color, int x, int y) {
         this.size = size;
         this.color = color;
+        this.x = x;
+        this.y = y;
     }
     
     public int getSize(){
