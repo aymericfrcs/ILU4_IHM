@@ -94,7 +94,7 @@ public class Ex2 extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Options d'impression"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Options d'impression"));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 

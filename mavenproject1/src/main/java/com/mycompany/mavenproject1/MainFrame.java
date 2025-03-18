@@ -43,7 +43,7 @@ public class MainFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Observation d'évènements");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Test des actions utilisateur"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Test des actions utilisateur"));
         jPanel1.setToolTipText("");
 
         jCheckBox1.setText("Case numéro 1");
@@ -123,7 +123,7 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(jButton4))
                         .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jCheckBox1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -160,7 +160,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane2.setViewportBorder(javax.swing.BorderFactory.createTitledBorder(null, "Observation d'évènements"));
+        jScrollPane2.setViewportBorder(javax.swing.BorderFactory.createTitledBorder("Observation des évènements"));
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -189,7 +189,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

@@ -46,7 +46,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jButton3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" pref="246" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" pref="223" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -57,9 +57,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Test des actions utilisateur">
-              <Value PropertyName="innerBorder" id=""/>
-            </TitledBorder>
+            <TitledBorder title="Test des actions utilisateur"/>
           </Border>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -83,7 +81,7 @@
                       </Group>
                       <Component id="jCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="56" max="32767" attributes="0"/>
+                  <EmptySpace pref="46" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane1" min="-2" pref="104" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
@@ -220,9 +218,7 @@
       <Properties>
         <Property name="viewportBorder" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Observation d&apos;&#xe9;v&#xe8;nements">
-              <Value PropertyName="innerBorder" id=""/>
-            </TitledBorder>
+            <TitledBorder title="Observation des &#xe9;v&#xe8;nements"/>
           </Border>
         </Property>
       </Properties>
