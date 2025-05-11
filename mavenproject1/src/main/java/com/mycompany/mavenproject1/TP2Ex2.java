@@ -5,6 +5,8 @@
 package com.mycompany.mavenproject1;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import javax.swing.Timer;
 
 /**
  *
@@ -13,6 +15,8 @@ import java.awt.Color;
 public class TP2Ex2 extends javax.swing.JFrame {
     
     private boolean userLoggedIn = false;
+    private int loggedInTime = 0;
+    Timer timer = new Timer(1000, (e) -> timerEventHandler(e));
 
     /**
      * Creates new form TP2Ex2
@@ -20,6 +24,7 @@ public class TP2Ex2 extends javax.swing.JFrame {
     public TP2Ex2() {
         initComponents();
         makeComponentsInvisible();
+        
     }
 
     /**
@@ -294,6 +299,8 @@ public class TP2Ex2 extends javax.swing.JFrame {
             tP2Ex2Panel1.setEnabled(false);
             
             jButton1.setText("Se connecter");
+            timer.stop();
+            jLabel4.setText("Connecté depuis 0 secondes");
         }
         else {
             if (!"".equals(jTextField1.getText()) && !"".equals(jTextField2.getText())) {
@@ -327,12 +334,21 @@ public class TP2Ex2 extends javax.swing.JFrame {
                 jButton1.setText("Se déconnecter");
 
                 //TODO TIMER
+                loggedInTime = 0;
+                timer.start();
+                
+                
                 
             }
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
+    private void timerEventHandler(ActionEvent e) {
+        loggedInTime++;
+        jLabel4.setText("Connecté depuis " + loggedInTime + " secondes");
+    }
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         //TODO dé-toggle le jToggleButton5
         
